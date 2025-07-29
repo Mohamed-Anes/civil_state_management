@@ -1,0 +1,7 @@
+Include
+Lib
+Scripts
+db.sqlite3
+db10.sqlite3
+*.cfg
+*.rar

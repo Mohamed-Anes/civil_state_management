@@ -1,0 +1,40 @@
+{% extends 'base_officier.html' %}
+
+{% block title%}
+Acte de Naissance
+{% endblock %}
+{% load static %}
+{% block page_content %}
+<link rel="stylesheet" href="{% static 'css/imprime.css' %}">
+    <h3  class="titre">Acte de Naissance</h3>
+    <table class="table1">
+    </tr>
+    <tr>    
+        <td>  nom </td><td> {{ naiss.NumNatCon.nom }}</td>
+   </tr>
+     <tr>
+        <td>  prenom  </td><td>{{ naiss.NumNatCon.prenom }}</td>
+    </tr>
+    <tr>
+        <td> sexe </td><td> {{ naiss.NumNatCon.sexe }}</td>
+</tr>
+<tr>
+    <td> nom et prenom de pere </td><td> {{ naiss.NumNatCon.NumPere.nom }} {{ naiss.NumNatCon.NumPere.prenom }}</td>
+</tr>
+<tr>
+    <td> nom et prenom de mere </td><td> {{ naiss.NumNatCon.NumMere.nom }} {{ naiss.NumNatCon.NumMere.prenom }}</td>
+</tr>
+<tr>
+    <td> date de naissance  </td><td>{{ naiss.dateNaiss }}</td>
+</tr>
+<tr>
+    <td>  date de declaration  </td><td>{{ naiss.dateDeclaration }}</td>
+</tr>
+<tr>
+    <td>  commune de naissance  </td><td>{{ naiss.NumComNaiss.nomC }}</td>
+</tr>
+<tr>
+    <td>  commune de declaration  </td><td>{{ naiss.NumComDec.nomC }}</td>
+</tr>
+
+{% endblock page_content %}

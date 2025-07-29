@@ -1,0 +1,12 @@
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/head.css' %}"> 
+<nav class="head">
+  <ul>
+    <li  class="m1"><strong >Gestion d'Etat Civile</strong></li>
+  </ul>
+  <ul>
+    <li><a  class ="home" href="{% url 'home_page' %}">Home</a></li>
+    <li><a  class ="home" href="{% url 'login' %}">Login</a></li>
+  </ul>
+</nav>

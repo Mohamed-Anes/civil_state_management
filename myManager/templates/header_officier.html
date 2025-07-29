@@ -1,0 +1,16 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/head.css' %}"> 
+
+
+<nav class="head" style="height:min-content ;">
+    <ul>
+      <li class="m1" >Logged in comme <strong>{{ request.user.username }}</strong></li>
+    </ul>
+    <ul>
+        <li><a class ="home" href="{% url 'home_page' %}">Menu</a></li>
+        <li>
+            <a class ="home" href="{% url 'logout' %}">Logout</a>
+        </li>
+    </ul>
+</nav>
+

@@ -1,0 +1,20 @@
+{% extends "base_officier.html" %}
+{% load static %}
+
+{% block title %}
+Ajouter un Naissance
+{% endblock %}
+
+{% block page_content %}
+<link rel="stylesheet" href="{% static 'css/form.css' %}"> 
+
+    <form method="post" class="hh">
+        <h3 class="t1">ajout act naissance</h3>
+        {% csrf_token %}
+        <small>{{ mssg }}</small>
+        <table class="table">
+            {{ form.as_table }}
+        </table>
+        <input class="button1" type="submit" value="Ajoute">
+    </form>
+{% endblock %}

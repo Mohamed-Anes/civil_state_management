@@ -1,0 +1,44 @@
+{% extends 'base_officier.html' %}
+
+{% block title%}
+Acte de Deces
+{% endblock %}
+{% load static %}
+{% block page_content %}
+<link rel="stylesheet" href="{% static 'css/imprime.css' %}"> 
+    
+   <h3 class="titre">Acte de Deces</h3>
+<table class="table1">
+    <tr>
+   <td> nom de décedé:</td><td> {{ dec.NumNatCon.nom }}</td>
+    </tr>
+    <tr>
+     <td> prenom de décedé:</td><td> {{ dec.NumNatCon.prenom }}</td>
+    </tr>
+    <tr>
+    <td> sexe: </td><td>{{ dec.NumNatCon.sexe }}</td>
+    </tr>
+    <tr>
+    <td>date de naissance:</td><td> {{ dec.NumNatCon.NumactNaiss.dateNaiss }}</td>
+    </tr>
+     <tr>  
+    <td> raison de mort: </td><td>{{ dec.reson }}</td>
+     </tr>
+     <tr>
+     <td>date et heure de mort:</td><td> {{ dec.date }} {{ dec.hour }}</td>
+     </tr>
+     <tr>
+    <td>nom et prenom de declarant: </td><td>{{ dec.NumNatDec.nom }} {{ dec.NumNatDec.prenom }}</td>
+     </tr>
+     <tr>
+    <td>nom et prenom de medecin legiste:</td><td> {{ dec.NumNatMedecin.nom }} {{ dec.NumNatMedecin.prenom }}</td>
+     </tr>
+     <tr>
+     <td>nom et prenom d'officier: </td><td>{{ dec.matOffic.nom }} {{ dec.matOffic.prenom }}</td>
+     </tr>
+     <tr>
+     <td>commune de déces: </td><td>{{ dec.NumComDeces.nomC }}</td>
+    </tr>
+     <tr>
+</table>
+{% endblock page_content %}

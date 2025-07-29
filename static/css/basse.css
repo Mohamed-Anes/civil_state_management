@@ -1,0 +1,36 @@
+
+.f1{
+    margin-left: 25%;
+    width: 50%;
+    background-color:white ;
+   
+   
+    border-radius: 10px 10px 10px 10px ;
+    color:hsl(195deg, 85%, 41%)
+    
+}
+
+.blb{
+    color: rgb(13, 13, 14);
+    font-size: 20px;
+    text-align: center;
+}
+
+.m2{
+   width: 100%;
+    height: 80px;
+    text-align: center;
+    color: white;
+    background-color: hsl(195deg, 85%, 41%)
+}
+.ll{
+
+    font-size: 30px;
+    text-align: center;
+    
+    margin-left:4%;
+}
+
+#bb2{
+    margin-bottom:20%;
+}

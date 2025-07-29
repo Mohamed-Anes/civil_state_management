@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/basse.css' %}"> 
+    <link rel="stylesheet" href="{% static 'css/pico.css' %}" >
+    <title>{% block title %}Base{% endblock %} | gestion d'etat civile</title>
+    <style>
+    </style>
+</head>
+<body style="overflow-x: hidden;">
+
+    {% include "header.html" %}
+
+    <main>
+        {% block page_content %}
+
+        <strong>{{ mssg }}</strong>
+
+        <fieldset class="f1">
+            <h5 class="blb">
+              "Bienvenue sur notre site de gestion de l'état civil"
+            </h5>
+            <h5 class="blb">
+              le site est un outil en ligne efficace et facile à utiliser pour gérer vos informations personnelles en toute sécurité.
+  
+               Nous avons conçu ce site pour simplifier la gestion de vos documents officiels tels que les certificats 
+               de naissance, de mariage et de décès. Grâce à notre interface intuitive, vous pourrez effectuer des démarches 
+               administratives en quelques clics seulement. Nous garantissons la confidentialité de vos données et la sécurité 
+                de vos transactions en ligne. N'hésitez pas à nous contacter si vous avez
+                des questions ou des besoins spécifiques. 
+              </h5>
+  
+        </fieldset>
+
+        {% endblock %}
+    </main>
+
+    <footer>
+    {% include "footer.html" %}
+    </footer>
+</body>
+</html>

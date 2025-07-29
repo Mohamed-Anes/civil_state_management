@@ -1,0 +1,37 @@
+{% extends 'base_officier.html' %}
+{% load static %}
+{% block title%}
+Acte de Mariage
+{% endblock %}
+
+{% block page_content %}
+<link rel="stylesheet" href="{% static 'css/imprime.css' %}"> 
+    
+   <h3 class="titre">Acte de Mariage</h3>
+<table class="table1">
+    <tr>
+    <td> numero d'acte</td><td> {{ mar.NumAct }}</td>
+    </tr>
+    <tr>
+    <td> nom et prenom de marie</td><td> {{ mar.NumMare.nom }} {{ mar.NumMare.prenom }}</td>
+    </tr>
+    <tr>
+     <td>nom et prenom de epouse</td><td> {{ mar.NumEpouse.nom }} {{ mar.NumEpouse.prenom }}</td>
+    </tr>
+    <tr>
+    <td>date de marriage </td><td>{{ mar.dateM }}</td>
+    </tr>
+    <tr>
+    <td>commune de marriage</td><td> {{ mar.NumCom.nomC }}</td>
+    </tr>
+    <tr>
+    <td>nom et prenom d'officier </td><td>{{ mar.matOffic.nom }} {{ mar.matOffic.prenom }}</td>
+    </tr>
+    <tr>
+    <td> nom et prenom des temoins</td><td> {{ t1.NumNat.nom }} {{ t1.NumNat.prenom }}, {{ t2.NumNat.nom }} {{ t2.NumNat.prenom }}, {{ t3.NumNat.nom }} {{ t3.NumNat.prenom }}</td>
+    </tr>
+    <tr>
+    <td> etat de marriage</td><td> {{ mar.etat }}</td>
+    </tr>
+
+{% endblock page_content %}

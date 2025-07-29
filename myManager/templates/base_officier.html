@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/basse.css' %}"> 
+    <link rel="stylesheet" href="{% static 'css/pico.css' %}" >
+    <title>{% block title %}Base{% endblock %} | gestion d'etat civile</title>
+    <style>
+        a {
+            color: black;
+            font-weight: 500;
+            text-decoration: none;
+        }
+        a:hover {
+            color: rgb(2, 66, 170);
+            box-shadow: 5px;
+        }
+    </style>
+</head>
+<body style="overflow-x: hidden;">
+    
+    {% include "header_officier.html" %}
+
+    <main>
+
+        {% block page_content %}
+
+        <div class="container" style="width: 70%">
+            <div class="grid">
+                <a href="{% url 'naissance' %}">Ajouter une Naissance</a>
+                <a href="{% url 'mariage' %}">Ajouter un Mariage</a>
+                <a href="{% url 'deces' %}">Ajouter un Déces</a>
+            </div>
+            <hr>
+            <div class="grid">
+                <a href="{% url 'rech_acte_naissance' %}">Imprimer Acte de Naissance</a>
+                <a href="{% url 'rech_acte_mariage' %}">Imprimer Acte de Mariage</a>
+                <a href="{% url 'rech_acte_deces' %}">Imprimer Acte de Deces</a>
+            </div>
+        </div>
+        <section>
+        </section>
+        <table style="width: 60%; margin-left:20%">
+            <tr>
+                <td> nombre de naissances:</td> <td>{{ nb_naiss }}</td>
+            </tr>
+            <tr>
+                <td>nombre de décés:</td> <td>{{ nb_deces }}</td>
+            </tr>
+            <tr>
+                <td>nombre de citoyens majeurs(age >= 18):</td> <td>{{ nb_cit_mjr }}</td>
+            </tr>
+        </table>
+
+        {% endblock %}
+
+    </main>
+
+    
+
+    <footer>
+    {% include "footer.html" %}
+    </footer>
+</body>
+</html>

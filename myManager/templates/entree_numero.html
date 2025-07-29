@@ -1,0 +1,70 @@
+{% extends 'base_officier.html' %}
+{% load static %}
+{% block title%}
+{{ title }}
+{% endblock %}
+
+{% block page_content %}
+<link rel="stylesheet" href="{% static 'css/entrenum.css' %}"> 
+    
+    <form action="" method="GET" class="hh" style="width: 70%">
+        <h3>{{ message1 }}</h3>
+        <table  class="t1">
+            {{ form.as_table }}
+         </table>
+        <button type="submit" class="b1">Chercher</button>
+         <small class="mmm">{{ message2 }}</small>
+    </form>
+
+    {% if list_naiss %}
+    <table>
+        <tr>
+            <td>numero d'acte</td>
+            <td>nom</td>
+            <td>prenom</td>
+        </tr>
+        {% for elem in list_naiss %}
+            <tr>
+                <td>{{ elem.NumAct }}</td>
+                <td>{{ elem.NumNatCon.nom }}</td>
+                <td>{{ elem.NumNatCon.prenom }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+
+    {% if list_mariage %}
+    <table>
+        <tr>
+            <td>numero d'acte</td>
+            <td>marie</td>
+            <td>epouse</td>
+        </tr>
+        {% for elem in list_mariage %}
+            <tr>
+                <td>{{ elem.NumAct }}</td>
+                <td>{{ elem.NumMare.nom }} {{ elem.NumMare.prenom }}</td>
+                <td>{{ elem.NumEpouse.nom }} {{ elem.NumEpouse.prenom }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+
+    {% if list_deces %}
+    <table>
+        <tr>
+            <td>numero d'acte</td>
+            <td>nom</td>
+            <td>prenom</td>
+        </tr>
+        {% for elem in list_deces %}
+            <tr>
+                <td>{{ elem.NumAct }}</td>
+                <td>{{ elem.NumNatCon.nom }}</td>
+                <td>{{ elem.NumNatCon.prenom }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+    
+{% endblock page_content %}
